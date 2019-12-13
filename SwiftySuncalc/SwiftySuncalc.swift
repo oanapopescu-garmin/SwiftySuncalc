@@ -93,6 +93,9 @@ public class SwiftySuncalc
      */
     private func fromJulian(j: Double) -> Date
     {
+        if j.isNaN {
+            return Date()
+        }
         return Date(milliseconds: Int((j + 0.5 - J1970) * dayMs))
     }
     
